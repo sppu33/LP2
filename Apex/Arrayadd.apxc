@@ -1,0 +1,19 @@
+public class ArrayAddition {
+    public static list<integer> addArrays(list <integer> a1, list<integer> a2){
+        list<integer> result=new list<integer> ();
+        integer maxLen=Math.max(a1.size(),a2.size());
+        
+        for(integer i=0;i<maxLen;i++){
+            integer val1=(i<a1.size())? a1[i]:0;
+            integer val2=(i<a2.size())? a2[i]:0;
+            result.add(val1+val2);
+        }
+        return result;
+    }
+}
+
+//in debug window
+list<integer> arr1 = new list<integer>{1, 2, 3, 4};list<integer> arr2 = new list<integer>{5, 6};
+
+list<integer> result = ArrayAddition.addArrays(arr1, arr2);
+System.debug('Result: ' + result); // Output: (6, 8, 3, 4)

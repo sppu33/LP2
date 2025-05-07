@@ -1,0 +1,17 @@
+public class TempCon {
+    public static decimal c2f(decimal c){
+        return ((c*9)/5)+32;
+    }
+    
+    public static decimal f2d(decimal f){
+        return ((f-32)*5)/9;
+    }
+}
+
+// to debug
+decimal c=23;
+decimal f=77;
+System.debug('To Fahrenheit is : '+ TempCon.c2f(c));
+System.debug('To Celcius is : '+ TempCon.f2d(f));
+
+// note : 1 degree celcius = 273.16 Kelvin

@@ -1,0 +1,57 @@
+public class ScientificCal {
+    public static decimal add(decimal a, decimal b){
+        return a+b;
+    }
+    
+    public static decimal substract(decimal a, decimal b){
+        return a-b;
+    }
+    
+    public static decimal multiply(decimal a, decimal b){
+        return a*b;
+    }
+    
+    public static decimal divide(decimal a, decimal b){
+        if(b==0){
+            //throw new Exception('Cannot divide by 0');
+            return -404;
+        } 
+        return a/b;
+    }
+    
+    public static double power(double base, double exp){
+        return Math.pow(base,exp);
+    }
+    
+    public static double squareRoot(double value){
+        return Math.sqrt(value);
+    }
+    
+    public static double log(double n){
+        return Math.log(n);
+    }
+    
+    public static double sin(double n){
+        return Math.sin(n);
+    }
+    
+    public static double cos(double value){
+        return Math.cos(value);
+    }
+    
+    public static double tan(double value){
+        return Math.tan(value);
+    }
+}
+
+// in debug section
+System.debug('Add: ' + ScientificCal.add(10, 5));
+System.debug('Subtract: ' + ScientificCal.subtract(10, 5));
+System.debug('Multiply: ' + ScientificCal.multiply(10, 5));
+System.debug('Divide: ' + ScientificCal.divide(10, 5));
+System.debug('Power: ' + ScientificCal.power(2, 3));
+System.debug('Square Root: ' + ScientificCal.squareRoot(16));
+System.debug('Log: ' + ScientificCal.log(10));
+System.debug('Sin(PI/2): ' + ScientificCal.sin(Math.PI/2));
+System.debug('Cos(0): ' + ScientificCal.cos(0));
+System.debug('Tan(PI/4): ' + ScientificCal.tan(Math.PI/4));

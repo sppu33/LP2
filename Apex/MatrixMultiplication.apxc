@@ -1,0 +1,42 @@
+public class MatrixMultiplication {
+    public static list<list<integer>> multiplyMatrices(list<list<integer>>A, list<list<integer>>B){
+        integer aRows=A.size();
+        integer aCols = A[0].size();
+        integer bRows = B.size();
+        integer bCols = B[0].size();
+        
+        
+        list<list<integer>>result=new list<list<integer>>();
+        if(aCols!=bRows){
+            System.debug('Not Possible');
+            return result;
+        }
+        
+        for(integer i=0;i<aRows;i++){
+            list<integer>row=new list<integer>();
+            for(integer j=0;j<bCols;j++){
+                integer sum=0;
+                for(integer k=0;k<aCols;k++){
+                    sum+=A[i][k]*B[k][j];
+                }
+                row.add(sum);
+            }
+            result.add(row);
+        }
+        return result;
+    }
+}
+
+// in debug
+List<List<Integer>> A = new List<List<Integer>>{
+    new List<Integer>{1, 2},
+    new List<Integer>{3, 4}
+};
+
+List<List<Integer>> B = new List<List<Integer>>{
+    new List<Integer>{5, 6},
+    new List<Integer>{7, 8}
+};
+
+List<List<Integer>> product = MatrixMultiplication.multiplyMatrices(A, B);
+System.debug('Matrix Multiplication Result: ' + product);

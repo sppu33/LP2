@@ -1,0 +1,31 @@
+public class AreaofGeometry {
+    // Circle
+    public static Double Circle(Double radius) {
+        return Math.PI * radius * radius;
+    }
+
+    // Rectangle
+    public static Double Rectangle(Double len, Double wid) {
+        return len * wid;
+    }
+
+    // Triangle
+    public static Double Triangle(Double base1, Double height) {
+        return 0.5 * base1 * height;
+    }
+
+    // Square
+    public static Double Square(Double side) {
+        return side * side;
+    }
+
+    public static void runCalculations() {
+        System.debug('Circle Area: ' + Circle(5));
+        System.debug('Rectangle Area: ' + Rectangle(4, 5));
+        System.debug('Square Area: ' + Square(3));
+        System.debug('Triangle Area: ' + Triangle(4, 3));
+    }
+}
+
+//in debug section
+AreaofGeometry.runCalculations();

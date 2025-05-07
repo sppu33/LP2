@@ -1,0 +1,28 @@
+public class CurrencyConverter {
+    public static decimal convert(decimal amt, string fromCurr, string toCurr){
+        
+        map<string,decimal> ratesToUSD=new map<string,decimal>{
+            'USD' =>1.0,
+            'INR'=>0.012,
+            'EUR'=>1.1,
+            'GBP'=>1.3
+        };
+            
+        if (!ratesToUSD.containsKey(fromCurr) || !ratesToUSD.containsKey(toCurr)){
+            System.debug('Unsupported currency.');
+            return 0;
+        }
+        
+        decimal amtinUSD=amt*ratesToUSD.get(fromCurr);
+        decimal convertedAmt=amtinUSD/ ratesToUSD.get(toCurr);
+        
+        return convertedAmt.setScale(2);
+    }
+}	
+
+// in debug 
+decimal amt=1000;
+string fromCurrency='USD';
+string toCurrency='INR';
+decimal converted=CurrencyConverter.convert(amt,fromCurrency,toCurrency);
+System.debug('Converted Currency: '+converted);

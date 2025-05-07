@@ -1,0 +1,33 @@
+public class PrimeCheck {
+  	public static Boolean isPrime(Integer num) {
+        if (num <= 1) {
+            return false;
+        }
+        if (num == 2) {
+            return true;
+        }
+        if (Math.mod(num, 2) == 0) {
+            return false;
+        }
+        
+        for (Integer i = 3; i <= Math.sqrt(num); i += 2) {
+            if (Math.mod(num, i) == 0) {
+                return false;
+            }
+        }
+        return true;
+	}
+    
+    public static void result(){
+        integer n=18;
+        if(isPrime(n)){
+            System.debug(n+' is a prime number');
+        }
+        else{
+            System.debug(n+' is not a prime number');
+        }
+    }
+}
+
+// in debug
+PrimeCheck.result;

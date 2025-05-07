@@ -1,0 +1,23 @@
+public class Fibonacci {
+    public static list <integer> generator(integer n){
+        list<integer> series=new list<integer>();
+        if(n<=0)return series;
+        if(n>=1)series.add(0);
+        if(n>=2)series.add(1);
+        
+        for(integer i=2;i<n;i++){
+            integer next=series[i-1]+series[i-2];
+            series.add(next);
+        }
+        return series;
+    }
+    
+    public static void answer(){
+        integer cnt=10;
+        list<integer> fib=generator(cnt);
+        System.debug('Fibonacci Series: '+ fib);
+    }
+}
+
+// in debug
+Fibonacci.answer();

@@ -1,0 +1,26 @@
+public class Interest {
+    public static decimal SI(decimal p, decimal rate, integer t){
+        decimal si=(p*rate*t)/100;
+        return (p+si).setScale(2);
+    }
+    
+    public static double CI(double p, double rate, integer n, integer t){
+        double r=rate/100;
+        double amt=p* Math.pow(1+(r/n),n*t);	// decimal is not allowed in Math.pow()
+        return amt;
+    }
+}
+
+// in debug
+decimal p=1000;
+decimal rate=12;
+integer ti=1;
+decimal si=Interest.SI(p,rate,ti);
+System.debug('Simple Interest is :'+ si);
+
+double pr=1000;
+double r=12;
+integer n=2;
+integer t=1;
+double ci=Interest.CI(pr,r,n,t);
+System.debug('Compound Interest is: '+ci);

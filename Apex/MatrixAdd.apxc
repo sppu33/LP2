@@ -1,0 +1,33 @@
+public class MatrixAdd {
+    public static list<list<integer>> addMat(list<list<integer>>A,list<list<integer>>B){
+        integer rows=A.size();
+        integer cols=A[0].size();
+        list<list<integer>> result=new list<list<integer>>();
+        
+        for(integer i=0;i<rows;i++){
+            list<integer>row=new list<integer>();
+            for(integer j=0;j<cols;j++){
+                row.add(A[i][j]+B[i][j]);
+            }
+            result.add(row);
+        }
+        return result;
+    }
+    
+    public static void check(){
+        list<list<integer>> A=new list<list<integer>>{
+            new list<integer>{1,2,3},
+            new list<integer>{1,2,3}
+        };
+        list<list<integer>> B=new list<list<integer>>{
+            new list<integer>{3,2,1},
+            new list<integer>{3,2,1}
+        };
+            
+        list<list<integer>>ans=addMat(A,B);
+        System.debug('Result Matrix is :'+ ans);
+    }
+}
+
+// in debug
+MatrixAdd.check();
